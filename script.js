@@ -67,6 +67,17 @@ function submitValue(value){
             mistake()
         }
     }
+    if(value=="mean"){
+        enterValue("mean")
+    }
+    if(value=="daily"){
+        var val=get('input').value
+        if(Math.abs(answers.mean/4-val)<10){
+            enterValue("daily")
+        }else{
+            mistake()
+        }
+    }
 
 }
 var defaultButton={text:"Continue",onclick:nextPage}
@@ -100,6 +111,12 @@ var pages =[
     {text:"If the kettle uses 2KW of power and has efficiency of 75%, for how many seconds does it need to run to heat the water from 20 degrees to 100 degrees?\
     use 4182 as the specific heat capacity of water.",
     button:{text:"Submit",onclick:()=>submitValue("kettle"),input:true}},
+    {text:"Well done! You increase to level 3. As you make the tea, the head chef walks in and promotes you to sous chef.",button:defaultButton},
+    {text: "You must now cook the evening meal in order to progress your carea further. Remain in the kitchen and get out 10 food items with nutrition tables.",button:defaultButton},
+    {text:"Calculate the mean large calories per item. What is your answer?",button:{text:"Submit",onclick:()=>submitValue('mean'),input:true}},
+    {text:"If two people live off these items for two days, what is mean of each person's mean daily intake of large calories?",button:{text:"Submit",onclick:()=>submitValue("daily"),input:true},
+}
+
 
 
 
