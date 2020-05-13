@@ -127,7 +127,7 @@ var pages =[
 
 var currentPage=0;
 function requestValue(min,max){
-    get("text").innerHTML+="<input type='number' min='"+min+"' max='"+max+"' id='input' value='0' style='font-size:100px' height='100px' width='400px'></input>";
+    get("text").innerHTML+="<input type='number' min='"+min+"' max='"+max+"' id='input' value='' style='font-size:100px' height='100px' width='400px'></input>";
 }
 
 function enterValue(name){
