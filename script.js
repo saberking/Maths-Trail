@@ -72,7 +72,7 @@ function submitValue(value){
     }
     if(value=="daily"){
         var val=get('input').value
-        if(Math.abs(answers.mean/4-val)<10){
+        if(Math.abs(answers.mean*10/4-val)<10){
             enterValue("daily")
         }else{
             mistake()
