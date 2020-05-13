@@ -119,7 +119,7 @@ function enterValue(name){
 }
 function selectPage(page){
     get("btn").style.display="block"
-
+get("btn").style.fontSize="100px"
     currentPage=page;
     document.getElementById("text").innerHTML=pages[page].text;
     var bracketPos=get("text").innerHTML.indexOf('@')
