@@ -115,6 +115,7 @@ var pages =[
     {text: "You must now cook the evening meal in order to progress your carea further. Remain in the kitchen and get out 10 food items with nutrition tables.",button:defaultButton},
     {text:"Calculate the mean large calories per item. What is your answer?",button:{text:"Submit",onclick:()=>submitValue('mean'),input:true}},
     {text:"If two people live off these items for two days, what is mean of each person's mean daily intake of large calories?",button:{text:"Submit",onclick:()=>submitValue("daily"),input:true},
+    {text:"The chef comes back to check on your work. She is very impressed by your progress and promotes you to Maths Professor. You increase to level 4."}
 }
 
 
