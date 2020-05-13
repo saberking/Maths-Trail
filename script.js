@@ -109,7 +109,7 @@ var pages =[
 
 var currentPage=0;
 function requestValue(min,max){
-    get("text").innerHTML+="<input type='number' min='"+min+"' max='"+max+"' id='input' value='0'></input>";
+    get("text").innerHTML+="<input type='number' min='"+min+"' max='"+max+"' id='input' value='0' style='font-size:100px'></input>";
 }
 
 function enterValue(name){
@@ -119,7 +119,7 @@ function enterValue(name){
 }
 function selectPage(page){
     get("btn").style.display="block"
-get("btn").style.fontSize="100px"
+get("btn").style.fontSize=100
     currentPage=page;
     document.getElementById("text").innerHTML=pages[page].text;
     var bracketPos=get("text").innerHTML.indexOf('@')
