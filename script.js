@@ -78,11 +78,19 @@ function submitValue(value){
             mistake()
         }
     }
+    if(value=="triangle"){
+        var val=get("input").value
+        if(val==4){
+            enterValue("triangle")
+        }else{
+            mistake()
+        }
+    }
 
 }
 var defaultButton={text:"Continue",onclick:nextPage}
 var pages =[
-    {text: "Hello! Welcome to Maths Advenure!", button: {text: "Continue",
+    {text: "Hello! Welcome to Maths Adventure!", button: {text: "Continue",
                                                             onclick: nextPage},
 },
     {text:"Your first job is kitchen porter. You will have to perform tasks in order to be assigned a better job.",button:{text: "Continue",
@@ -112,10 +120,13 @@ var pages =[
     use 4182 as the specific heat capacity of water.",
     button:{text:"Submit",onclick:()=>submitValue("kettle"),input:true}},
     {text:"Well done! You increase to level 3. As you make the tea, the head chef walks in and promotes you to sous chef.",button:defaultButton},
-    {text: "You must now cook the evening meal in order to progress your carea further. Remain in the kitchen and get out 10 food items with nutrition tables.",button:defaultButton},
+    {text: "You must now cook the evening meal in order to progress your career further. Remain in the kitchen and get out 10 food items with nutrition tables.",button:defaultButton},
     {text:"Calculate the mean large calories per item. What is your answer?",button:{text:"Submit",onclick:()=>submitValue('mean'),input:true}},
     {text:"If two people live off these items for two days, what is mean of each person's mean daily intake of large calories?",button:{text:"Submit",onclick:()=>submitValue("daily"),input:true}},
-    {text:"The chef comes back to check on your work. She is very impressed by your progress and promotes you to Maths Professor. You increase to level 4.",button:defaultButton}
+    {text:"The chef comes back to check on your work. She is very impressed by your progress and promotes you to Maths Professor. You increase to level 4.",button:defaultButton},
+    {text:"The phone rings. Go and pick it up",button:defaultButton},
+    {text:"It is one of your students. She wants to know the hyopotenuse of an isosceles right-angled triangle with area 4 square units", button:{text:"Submit",onclick:()=>submitValue("triangle"),input:true}},
+    {text:"Your student is amazed by your intellect. You publish a paper on right-angled triangles and become a millionaire. You win!"}
 
 
 
@@ -147,12 +158,18 @@ get("btn").style.fontSize=100
         get("text").innerHTML=get("text").innerHTML.substring(0,bracketPos)+answers[name]+get("text").innerHTML.substring(closeBracketPos+1)
         bracketPos=get("text").innerHTML.indexOf('@')
     }
-    get("btn").innerHTML=pages[page].button.text;
-    get("btn").onclick=pages[page].button.onclick
+    if(pages[page].button){
+        get("btn").innerHTML=pages[page].button.text;
+        get("btn").onclick=pages[page].button.onclick
+    
+        if(pages[page].button.input){
+            requestValue(0, "");
+        }
+    }else{
+        get("btn").style.display="none"
 
-    if(pages[page].button.input){
-        requestValue(0, "");
     }
+
 }
 
 
